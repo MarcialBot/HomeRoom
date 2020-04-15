@@ -8,7 +8,13 @@
 <form method="post" action="{% url 'signup' %}">
     {% csrf_token %}
     {{ form.as_p }}
+    {{ profile_form.as_p }}
     <input type="submit" class="btn" value="signup">
 </form>
 
+<script>
+    let selectElement = document.getElementById('id_user_type');
+
+    M.FormSelect.init(selectElement);
+</script>
 {% endblock %}

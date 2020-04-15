@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- If no assignments  -->
+<h3>There are no assignments at this time</h3>
+
+<!-- If user is teacher 
+    class name, list of students-->
+<div class="card">
+    <a>Class Name</a>
+        <div class="card-content">
+        </div>
+    </a>
+</div>
+<!-- If user is student
+    class name, list of assignments -->
+    <div class="card">
+        <a>Class Name</a>
+            <div class="card-content">
+            </div>
+        </a>
+    </div>
+{% endblock %}

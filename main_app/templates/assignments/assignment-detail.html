@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- If user is teacher -->
+<div class="card-content">    
+    <div class="card-action">
+    <a href="">Edit</a>
+    <a href="">Delete</a>
+    </div>
+</div>
+<!-- If user is student -->
+<div class="card-content">    
+<h3>Assignment Name</h3>
+<form>
+</form>
+<input type="submit" value="submit">
+</div>
+
+{% endblock %}

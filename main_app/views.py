@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
+from .models import Classroom
 from .forms import ProfileForm
 
 from django.contrib.auth import login
@@ -40,3 +41,16 @@ def signup(request):
     context = {'form': form, 'profile_form': profile_form,
                'error_message': error_message}
     return render(request, 'registration/signup.html', context)
+
+
+class ClassroomCreate(CreateView):
+    model = Classroom
+    fields = ['subject']
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+class ClassroomList(ListView):
+    model = Classroom

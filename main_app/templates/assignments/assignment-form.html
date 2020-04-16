@@ -7,7 +7,8 @@
 <h1>Add Assignment</h1>
 
 <div class="card-action">
-    <form>
+    <form action="{% url 'assoc_assignment' class.id assignment.id %}" method="post">
+        {% csrf_token %}
       <button type="submit" class="btn">Add</button>
     </form>
   </div>

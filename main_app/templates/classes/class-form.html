@@ -7,9 +7,16 @@
 <h1>Add Class</h1>
 
 <div class="card-action">
-    <form>
-      <button type="submit" class="btn">Add</button>
-    </form>
+  <form action="" method="post">
+    {% csrf_token %}
+    
+    {{ form }}
+    
+    <input type="submit" value="Submit" class="btn">
+    <!-- used index for filler but will be link to class dashboard -->
+    <a class="btn" href="{% url 'index' %}">Cancel</a>
+</form>
+
   </div>
 
 {% endblock %}

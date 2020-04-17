@@ -21,4 +21,12 @@ class Profile(models.Model):
     phone_number = models.IntegerField()
 
     def __str__(self):
-        return f" {self.user} - {self.get_user_type_display()}"
+        return f" Username: {self.user} | Usertype: {self.get_user_type_display()}"
+
+
+class Classroom(models.Model):
+    subject = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f" Username: {self.user} | Subject: {self.subject}"

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
-from .models import Classroom
+from .models import Classroom, Assignment
 from .forms import ProfileForm
 
 from django.contrib.auth import login
@@ -54,3 +54,12 @@ class ClassroomCreate(CreateView):
 
 class ClassroomList(ListView):
     model = Classroom
+
+
+class AssignmentCreate(CreateView):
+    model = Assignment
+    fields = ['name', 'description', 'grade', 'due_date']
+
+
+class AssignmentList(ListView):
+    model = Assignment

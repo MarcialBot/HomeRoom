@@ -45,7 +45,7 @@ def signup(request):
 
 class ClassroomCreate(CreateView):
     model = Classroom
-    fields = ['subject']
+    fields = ['subject', 'user']
 
     def form_valid(self, form):
         form.instance.user = self.request.user

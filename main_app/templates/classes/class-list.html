@@ -6,12 +6,21 @@
 
 <!-- If user is admin
     class name, teacher name, list of students-->
-<div class="card">
-    <a>Class Name</a>
-        <div class="card-content">
-        </div>
-    </a>
-</div>
+    {% if object_list.count == 0 %}
+    <h3 class="red-text">There are no Classes</h3>
+    <a href="{% url 'classrooms_create' %}">Add a Class</a>
+{% else %}
+    {% for class in object_list %}
+    <div class="card">
+        <a href="{% url 'classrooms_detail' classroom.id %}">
+            <div class="card-content">
+                <span class="card-title">{{ classroom.name }}</span>
+                <!-- still need to add list of students here -->
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+{% endif %}
 <!-- If user is teacher 
     class name, list of students-->
 <div class="card">

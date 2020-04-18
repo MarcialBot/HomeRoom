@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Should only be seen is user is Admin -->
+
+<h1>Add Class</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" class="btn blue">
+    <a class="btn red" href="{% url 'classrooms_index' %}">Cancel</a>
+</form>
+
+
+{% endblock %}

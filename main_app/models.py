@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from datetime import datetime, date
+from django.utils import timezone
 
 from django.contrib.auth.models import User
 
@@ -30,3 +32,20 @@ class Classroom(models.Model):
 
     def __str__(self):
         return f" Username: {self.user} | Subject: {self.subject}"
+
+
+class Assignment(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=250)
+    grade = models.IntegerField()
+    date_created = models.DateField(default=timezone.now)
+    due_date = models.DateField('due date')
+    classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f" Subject: {self.classroom.subject} | Assignment: {self.name}"
+
+
+class AutoDateTimeField(models.DateTimeField):
+    def pre_save(self, model_instance, add):
+        return timezone.now()

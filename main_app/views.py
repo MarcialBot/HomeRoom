@@ -21,6 +21,16 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def classroom_index(request):
+    classrooms = Classroom.objects.all()
+    return render(request, 'classroom/classroom-list.html', {'classrooms': classrooms})
+
+def classrooms_detail(request, classroom_id):
+    classroom = Classroom.get(id=classroom_id)
+    return render(request, 'classroom/detail.html', {
+        'classroom': classroom
+    })
+
 
 def signup(request):
     error_message = ''
@@ -45,12 +55,12 @@ def signup(request):
 
 class ClassroomCreate(CreateView):
     model = Classroom
-    fields = ['subject']
+    fields = ['subject', 'description']
+    success_url = '/classrooms/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
-
-
+    
 class ClassroomList(ListView):
     model = Classroom

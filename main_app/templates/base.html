@@ -24,10 +24,15 @@
                 <ul class="right">
                     <li><a href="/about">About</a></li>
                     {% if user.is_authenticated %}
+                    <li><a href="{% url 'classrooms_index' %}">View All Classrooms</a></li>
+                    <li><a href="{% url 'classrooms_create' %}">Create a Class</a></li>
+                    <li><a href="/"</li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
                     {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>
+
+                    
                     {% endif %}
                 </ul>
             </div>

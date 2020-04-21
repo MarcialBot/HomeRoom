@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- If user is admin -->
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ object.name }}</span>
+        <!-- still need list of students here  -->
+    </div>
+<div class="card-action">
+    <a href="{% url 'classrooms_update' object.id %}">Edit</a>
+    <a href="{% url 'classrooms_delete' object.id %}">Delete</a>
+</div>
+   <!-- Available toys will come after this line -->
+   </div>
+<div class="card-action">
+    <a href="">Edit</a>
+    <a href="">Delete</a>
+</div>
+
+<!-- If user is teacher -->
+
+<div class="card">
+    <a>Class Name</a>
+        <div class="card-content">
+        </div>
+    </a>
+</div>
+
+<!-- If user is student -->
+
+<div class="card">
+    <a>Class Name</a>
+        <div class="card-content">
+        </div>
+    </a>
+</div>
+
+{% endblock %}

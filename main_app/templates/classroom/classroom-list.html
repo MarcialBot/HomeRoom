@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- If no classes  -->
+<h3>There are no Classes</h3>
+
+<!-- If user is admin
+    class name, teacher name, list of students-->
+    {% if object_list.count == 0 %}
+    <h3 class="red-text">There are no Classes</h3>
+    <a href="{% url 'classrooms_create' %}">Add a Class</a>
+{% else %}
+    {% for classroom in classrooms %}
+    <div class="card">
+        <a href="{% url 'classroom_detail' classroom.id %}">
+            <div class="card-content">
+                <span class="card-title">{{ classroom.subject }}</span>
+                <!-- still need to add list of students here -->
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+{% endif %}
+<!-- If user is teacher 
+    class name, list of students-->
+<div class="card">
+    <a>Class Name</a>
+        <div class="card-content">
+        </div>
+    </a>
+</div>
+<!-- If user is student
+    class name, list of assignments -->
+    <div class="card">
+        <a>Class Name</a>
+            <div class="card-content">
+            </div>
+        </a>
+    </div>
+{% endblock %}

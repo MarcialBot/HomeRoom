@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from datetime import datetime, date
+from django.utils import timezone
 
 from django.contrib.auth.models import User
 
@@ -27,10 +29,28 @@ class Profile(models.Model):
 class Classroom(models.Model):
     subject = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    description = models.TextField(max_length=500, default='Enter A Description')
+    description = models.TextField(
+        max_length=500, default='Enter A Description')
 
     def __str__(self):
         return f" Username: {self.user} | Subject: {self.subject}"
 
     def get_absolute_url(self):
-            return reverse('detail', kwags={'classroom_id': self.id})
+        return reverse('detail', kwags={'classroom_id': self.id})
+
+
+class Assignment(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=250)
+    grade = models.IntegerField(default=0)
+    date_created = models.DateField(default=timezone.now)
+    due_date = models.DateField('due date')
+    classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f" Subject: {self.classroom.subject} | Assignment: {self.name}"
+
+
+class AutoDateTimeField(models.DateTimeField):
+    def pre_save(self, model_instance, add):
+        return timezone.now()

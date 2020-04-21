@@ -25,9 +25,19 @@ nav li a {
 form{
     display: flex;
     flex-direction: column; /* default */
-    color: rgb(8, 7, 8);
     font-size: 12px;  
-    padding: 10px 0px 0px 20px;
+    padding: 10px;
+  
+}
+
+#loginform {
+    display: flex;
+    flex-direction: column; /* default */
+    font-size: 12px;  
+    padding: 0px;
+    background-image: url('/static/images/paperbg.png');
+    background-size: 120%;
+    background-position: center;
   
 }
 
@@ -57,39 +67,94 @@ label {
  }
 
 #id_username {
-    margin: 0;
+  
     padding: 0px 10px 0px 10px;
-    width: 40vh;
     box-sizing: border-box;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+  
 
 }
 
+#id_password {
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+
+
+
 #id_password1 {
-     margin: 0px ;
-     padding: 0px 10px 0px 0px;
-     width: 40vh;
-     box-sizing: border-box;
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
 }
 
 #id_password2 {
-    margin: 0;
-    padding: 10px;
-    width: 40vh;
+    padding: 0px 10px 0px 10px;
     box-sizing: border-box;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
 }
 
 #id_address {
-    margin: 0;
-    padding: 10px;
-    width: 40vh;
+    padding: 0px 10px 0px 10px;
     box-sizing: border-box;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
 }
 
 
-#id_phone_number{
-    margin: 0;
-    padding: 10px;
-    width: 40vh;
+#id_phone_number {
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
 }
 
 

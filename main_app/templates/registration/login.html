@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
 <h1>Log In</h1>
-<div class="column" input="s2 col" style=" padding: 0 10px; border: 6px solid #33e9e9;"></div>
-<form method="post" action="{% url 'login' %}">
+<div class="column" input="s2 col" style=" padding: 20px 20px 20px 20px; border: 6px solid #3096f3; background-color: aliceblue;">
+<form id="loginform" method="post" action="{% url 'login' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" class="btn" value="login">
+    <input type="submit" class="btn blue" value="login">
     <input type="hidden" name="next" value="{{ next }}">
 </form>
 

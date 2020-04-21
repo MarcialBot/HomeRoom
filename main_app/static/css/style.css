@@ -22,6 +22,93 @@ nav li a {
     flex-direction: row;
 }
 
+form{
+    display: flex;
+    flex-direction: column; /* default */
+    color: rgb(8, 7, 8);
+    font-size: 12px;  
+    padding: 10px 0px 0px 20px;
+  
+}
+
+div.column{
+    margin: 50px 100px 100px 100px;
+}
+
+span.helptext{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    padding: 0px 10px 0px 10px;
+    display: flex;
+}
+
+ p {
+     margin: 0px 0px 20px 100px;
+ }   
+
+ li {
+     display: flex;
+     flex-direction:column;
+     padding: 0px 0px 0px 100px;
+ }
+
+#id_username {
+    margin: 0;
+    padding: 0px 10px 0px 10px;
+    width: 40vh;
+    box-sizing: border-box;
+
+}
+
+#id_password1 {
+     margin: 0px ;
+     padding: 0px 10px 0px 0px;
+     width: 40vh;
+     box-sizing: border-box;
+}
+
+#id_password2 {
+    margin: 0;
+    padding: 10px;
+    width: 40vh;
+    box-sizing: border-box;
+}
+
+#id_address {
+    margin: 0;
+    padding: 10px;
+    width: 40vh;
+    box-sizing: border-box;
+}
+
+
+#id_phone_number{
+    margin: 0;
+    padding: 10px;
+    width: 40vh;
+}
+
+
+div.select-wrapper{
+    padding:10px;
+}
+
+
+input.select-dropdown.dropdown-trigger{
+    margin: 0;
+    padding: 10px;
+    width: 30vh;
+}
+
+
+ svg.caret {
+    position: absolute;
+ }
+
 
 footer.page-footer {
     background-color: #CAEEEF;
@@ -29,3 +116,5 @@ footer.page-footer {
     text-align: right;
     color: gray
 }
+
+

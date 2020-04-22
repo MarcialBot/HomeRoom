@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- If no classes  -->
-<h3>There are no Classes</h3>
-
 <!-- If user is admin
     class name, teacher name, list of students-->
 {% if profile.user_type == admin and object_list.count == 0 %}
     <h3 class="red-text">There are no Classes</h3>
-    <a href="{% url 'classrooms_create' %}">Add a Class</a>
-{% elif profile.user_type == admin and object_list.count >= 0 %}
+{% elif profile.user_type == admin %}
     {% for classroom in classrooms %}
     <div class="card">
         <a href="{% url 'classroom_detail' classroom.id %}">
@@ -24,7 +20,7 @@
     class name, list of students-->
 {% elif profile.user_type == teacher and object_list.count == 0 %}
     <h3 class="red-text">There are no Classes</h3>
-{% elif profile.user_type == teacher and object_list.count > 0 %}
+{% elif profile.user_type == teacher %}
     {% for classroom in classrooms %}
     <div class="card">
         <a href="{% url 'classroom_detail' classroom.id %}">
@@ -39,7 +35,7 @@
     class name, list of assignments -->
 {% elif profile.user_type == student and object_list.count == 0 %}
     <h3 class="red-text">There are no Classes</h3>
-{% elif profile.user_type == student and object_list.count > 0 %}
+{% elif profile.user_type == student %}
     {% for classroom in classrooms %}
     <div class="card">
         <a href="{% url 'classroom_detail' classroom.id %}">

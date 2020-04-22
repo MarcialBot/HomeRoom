@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h3>Dashboard</h3>
 <!-- If user is admin
     class name, teacher name, list of students-->
 {% if profile.user_type == admin and object_list.count == 0 %}

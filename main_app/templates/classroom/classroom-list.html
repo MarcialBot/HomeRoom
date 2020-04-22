@@ -6,11 +6,10 @@
 
 <!-- If user is admin
     class name, teacher name, list of students-->
-{% if profile.user_type.admin %}
-    {% if object_list.count == 0 %}
+{% if profile.user_type == admin and object_list.count == 0 %}
     <h3 class="red-text">There are no Classes</h3>
     <a href="{% url 'classrooms_create' %}">Add a Class</a>
-{% else %}
+{% elif profile.user_type == admin and object_list.count >= 0 %}
     {% for classroom in classrooms %}
     <div class="card">
         <a href="{% url 'classroom_detail' classroom.id %}">
@@ -21,16 +20,11 @@
         </a>
     </div>
     {% endfor %}
-{% endif %}
-{% else %}
-    <h3 class="red-text">Not Authorized</h3>
-{% endif %}
 <!-- If user is teacher 
     class name, list of students-->
-    {% if profile.user_type.teacher %}
-    {% if object_list.count == 0 %}
+{% elif profile.user_type == teacher and object_list.count == 0 %}
     <h3 class="red-text">There are no Classes</h3>
-{% else %}
+{% elif profile.user_type == teacher and object_list.count > 0 %}
     {% for classroom in classrooms %}
     <div class="card">
         <a href="{% url 'classroom_detail' classroom.id %}">
@@ -41,16 +35,11 @@
         </a>
     </div>
     {% endfor %}
-{% endif %}
-{% else %}
-    <h3 class="red-text">Not Authorized</h3>
-{% endif %}
 <!-- If user is student
     class name, list of assignments -->
-    {% if profile.user_type.student %}
-    {% if object_list.count == 0 %}
+{% elif profile.user_type == student and object_list.count == 0 %}
     <h3 class="red-text">There are no Classes</h3>
-{% else %}
+{% elif profile.user_type == student and object_list.count > 0 %}
     {% for classroom in classrooms %}
     <div class="card">
         <a href="{% url 'classroom_detail' classroom.id %}">
@@ -61,8 +50,5 @@
         </a>
     </div>
     {% endfor %}
-{% endif %}
-{% else %}
-    <h3 class="red-text">Not Authorized</h3>
 {% endif %}
 {% endblock %}

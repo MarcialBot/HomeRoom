@@ -36,7 +36,7 @@ class Classroom(models.Model):
         return f" Username: {self.user} | Subject: {self.subject}"
 
     def get_absolute_url(self):
-        return reverse('detail', kwags={'classroom_id': self.id})
+        return reverse('classroom_detail', kwargs={'classroom_id': self.id})
 
 
 class Assignment(models.Model):

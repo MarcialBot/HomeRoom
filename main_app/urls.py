@@ -9,6 +9,8 @@ urlpatterns = [
          views.classrooms_detail, name='classroom_detail'),
     path('classrooms/create/', views.ClassroomCreate.as_view(),
          name='classrooms_create'),
+     path('classrooms/<int:pk>/update/', views.ClassroomUpdate.as_view(), name='classrooms_update'),
+     path('classrooms/<int:pk>/delete/', views.ClassroomDelete.as_view(), name='classrooms_delete'),
     path('assignments/create/', views.AssignmentCreate.as_view(),
          name='assignments_create'),
     path('assignments/', views.AssignmentList.as_view(), name='assignments_index'),

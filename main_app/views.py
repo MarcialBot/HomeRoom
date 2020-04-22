@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 
 from .models import Classroom, Assignment
 from .forms import ProfileForm
@@ -26,10 +26,10 @@ def classroom_index(request):
     return render(request, 'classroom/classroom-list.html', {'classrooms': classrooms})
 
 def classrooms_detail(request, classroom_id):
-    classroom = Classroom.get(id=classroom_id)
-    return render(request, 'classroom/detail.html', {
+    classroom = Classroom.objects.get(id=classroom_id)
+    return render(request, 'classroom/classroom-detail.html', {
         'classroom': classroom
-    })
+        })
 
 
 def signup(request):
@@ -61,10 +61,14 @@ class ClassroomCreate(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
-    
-class ClassroomList(ListView):
-    model = Classroom
 
+class ClassroomUpdate(UpdateView):
+    model = Classroom
+    fields = ['subject', 'description']
+
+class ClassroomDelete(DeleteView):
+    model = Classroom
+    success_url = '/classrooms/'
 
 class AssignmentCreate(CreateView):
     model = Assignment

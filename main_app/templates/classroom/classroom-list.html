@@ -7,24 +7,29 @@
 {% if profile.user_type == admin and object_list.count == 0 %}
     <h3 class="red-text">There are no Classes</h3>
 {% elif profile.user_type == admin %}
+<div  class="row">
     {% for classroom in classrooms %}
-    <div class="card">
+    <div class="col s4">
+    <div id="classcards" class="card">
         <a href="{% url 'classroom_detail' classroom.id %}">
-            <div class="card-content">
+            <div  class="card-content">
                 <span class="card-title">{{ classroom.subject }}</span>
                 <p>Description: {{ classroom.description }}</p>
                 <!-- still need to add list of students here -->
             </div>
         </a>
     </div>
+</div>
+
     {% endfor %}
+</div>
 <!-- If user is teacher 
     class name, list of students-->
 {% elif profile.user_type == teacher and object_list.count == 0 %}
     <h3 class="red-text">There are no Classes</h3>
 {% elif profile.user_type == teacher %}
     {% for classroom in classrooms %}
-    <div class="card">
+    <div  class="card">
         <a href="{% url 'classroom_detail' classroom.id %}">
             <div class="card-content">
                 <span class="card-title">{{ classroom.subject }}</span>

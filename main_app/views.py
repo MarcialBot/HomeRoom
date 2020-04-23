@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import Classroom, Assignment
 from .forms import ProfileForm
@@ -21,15 +21,19 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+
+@login_required
 def classroom_index(request):
     classrooms = Classroom.objects.all()
     return render(request, 'classroom/classroom-list.html', {'classrooms': classrooms})
 
+
+@login_required
 def classrooms_detail(request, classroom_id):
     classroom = Classroom.objects.get(id=classroom_id)
     return render(request, 'classroom/classroom-detail.html', {
         'classroom': classroom
-        })
+    })
 
 
 def signup(request):
@@ -53,7 +57,7 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
-class ClassroomCreate(CreateView):
+class ClassroomCreate(LoginRequiredMixin, CreateView):
     model = Classroom
     fields = ['subject', 'description']
     success_url = '/classrooms/'
@@ -62,18 +66,36 @@ class ClassroomCreate(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class ClassroomUpdate(UpdateView):
+
+class ClassroomUpdate(LoginRequiredMixin, UpdateView):
     model = Classroom
     fields = ['subject', 'description']
 
-class ClassroomDelete(DeleteView):
+
+class ClassroomDelete(LoginRequiredMixin, DeleteView):
     model = Classroom
     success_url = '/classrooms/'
 
-class AssignmentCreate(CreateView):
+
+class AssignmentCreate(LoginRequiredMixin, CreateView):
     model = Assignment
     fields = ['name', 'description', 'grade', 'due_date']
 
 
-class AssignmentList(ListView):
+class AssignmentUpdate(LoginRequiredMixin, UpdateView):
+    model = Assignment
+    fields = ['name', 'description', 'grade', 'due_date']
+    success_url = '/assigments/'
+
+
+class AssignmentDelete(LoginRequiredMixin, DeleteView):
+    model = Assignment
+    success_url = '/assigments/'
+
+
+class AssignmentList(LoginRequiredMixin, ListView):
+    model = Assignment
+
+
+class AssignmentDetail(LoginRequiredMixin, DetailView):
     model = Assignment

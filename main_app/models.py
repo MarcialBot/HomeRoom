@@ -50,6 +50,9 @@ class Assignment(models.Model):
     def __str__(self):
         return f" Subject: {self.classroom.subject} | Assignment: {self.name}"
 
+    def get_absolute_url(self):
+        return reverse('assignments_detail', kwargs={'assignment_id': self.id})
+
 
 class AutoDateTimeField(models.DateTimeField):
     def pre_save(self, model_instance, add):

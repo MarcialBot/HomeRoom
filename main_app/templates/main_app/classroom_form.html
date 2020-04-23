@@ -4,16 +4,26 @@
 
 <!-- Should only be seen is user is Admin -->
 
-<h1>Add Class</h1>
+<h1 style="color: #3096f3; margin: 10px 270px;">Add Class</h1>
+<div class="column" input="s2 col" style=" padding: 0 10px; border: 6px solid #3096f3; background-color: aliceblue;">
 
-<form action="" method="post">
+<form id="classform" action="" method="post">
     {% csrf_token %}
     <table>
         {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit" class="btn blue">
-    <a class="btn red" href="{% url 'classrooms_index' %}">Cancel</a>
+    <input id="cf_button" type="submit" value="Submit" class="btn blue" style="border-radius: 50px;border: none;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin: 10px 160px 10px">
+    <a  id="cf_cancel_button" class="btn yellow" href="{% url 'classrooms_index' %}" style="border-radius: 50px;border: none;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin: 10px 160px 10px">Cancel</a>
 </form>
+</div>
 
 
 {% endblock %}

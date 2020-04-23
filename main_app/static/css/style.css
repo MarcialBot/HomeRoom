@@ -4,6 +4,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     color: gray;
+    background-image: url('/static/images/compbg.jpg');
 }
   
 main {
@@ -11,10 +12,11 @@ main {
 }
 
 nav{
-    background-color: #CAEEEF;
+    background-color: #86dcfc96;
     height: auto;
-    color: gray;
+    
 }
+
 
 nav li a {
     color: gray;
@@ -27,8 +29,16 @@ form{
     flex-direction: column; /* default */
     font-size: 12px;  
     padding: 10px;
+    border-radius: 10px;
   
 }
+
+
+
+div.column {
+    border-radius: 10px;
+}
+
 
 #loginform {
     display: flex;
@@ -38,11 +48,21 @@ form{
     background-image: url('/static/images/paperbg.png');
     background-size: 120%;
     background-position: center;
-  
+}
+
+#signinform {
+    display: flex;
+    flex-direction: column; /* default */
+    font-size: 12px;  
+    padding: 0px;
+    background-image: url('/static/images/paperbg.png');
+    background-size: 120%;
+    background-position: center;
 }
 
 div.column{
     margin: 50px 100px 100px 100px;
+    
 }
 
 span.helptext{
@@ -66,29 +86,28 @@ label {
      padding: 0px 0px 0px 100px;
  }
 
+/* login in */
 #id_username {
   
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     background-color: white;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border: 5px solid;
+    border-color: #0093dd;
     border-radius: 10px;
-    outline: darkblue;
     height: 3rem;
     width: 70%;
-    font-size: 16px;
+    font-size: 30px;
     margin: 0 0 8px 0;
-  
-
+    font-family: 'Nanum Pen Script', cursive;
 }
 
 #id_password {
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     background-color: white;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border: 5px solid;
+    border-color: #0093dd;
     border-radius: 10px;
     outline: darkblue;
     height: 3rem;
@@ -98,14 +117,14 @@ label {
 }
 
 
-
+/* sign up form */
 
 #id_password1 {
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     background-color: white;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border: 5px solid;
+    border-color: #0093dd;
     border-radius: 10px;
     outline: darkblue;
     height: 3rem;
@@ -118,8 +137,8 @@ label {
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     background-color: white;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border: 5px solid;
+    border-color: #0093dd;
     border-radius: 10px;
     outline: darkblue;
     height: 3rem;
@@ -132,8 +151,8 @@ label {
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     background-color: white;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border: 5px solid;
+    border-color: #0093dd;
     border-radius: 10px;
     outline: darkblue;
     height: 3rem;
@@ -147,8 +166,8 @@ label {
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     background-color: white;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border: 5px solid;
+    border-color: #0093dd;
     border-radius: 10px;
     outline: darkblue;
     height: 3rem;
@@ -157,7 +176,40 @@ label {
     margin: 0 0 8px 0;
 }
 
+#id_subject {
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 5px solid;
+    border-color: #0093dd;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 30px;
+    margin: 0 0 8px 10px;
+    font-family: 'Nanum Pen Script', cursive;
+   
+}
 
+/* dashboard */
+#classcards {
+    border-color: #0093dd;
+    border-radius: 20px;
+  
+}
+ 
+span.card-title {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 24px;
+}
+
+div.card.content {
+    margin: 70px;
+}
+
+
+/* ---------------- */
 div.select-wrapper{
     padding:10px;
 }
@@ -176,10 +228,12 @@ input.select-dropdown.dropdown-trigger{
 
 
 footer.page-footer {
-    background-color: #CAEEEF;
+    background-color: #86dcfc96;
     padding-top: 0;
     text-align: right;
     color: gray
 }
 
-
+.brand-logo:hover {
+    background: none !important;
+}

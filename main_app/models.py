@@ -51,7 +51,7 @@ class Assignment(models.Model):
         return f" Subject: {self.classroom.subject} | Assignment: {self.name}"
 
     def get_absolute_url(self):
-        return reverse('assignments_detail', kwargs={'assignment_id': self.id})
+        return reverse('classroom_detail', kwargs={'classroom_id': self.classroom.id})
 
 
 class AutoDateTimeField(models.DateTimeField):

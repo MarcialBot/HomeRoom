@@ -1,6 +1,8 @@
+import logging
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+from django.http import HttpResponseRedirect
 
 from .models import Classroom, Assignment
 from .forms import ProfileForm
@@ -13,6 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.http import HttpResponse
 
+logger = logging.getLogger(__name__)
 
 def home(request):
     return render(request, 'home.html')
@@ -31,8 +34,9 @@ def classroom_index(request):
 @login_required
 def classrooms_detail(request, classroom_id):
     classroom = Classroom.objects.get(id=classroom_id)
+    assignment = Assignment.objects.all()
     return render(request, 'classroom/classroom-detail.html', {
-        'classroom': classroom
+        'classroom': classroom, 'assignment': assignment
     })
 
 
@@ -80,7 +84,11 @@ class ClassroomDelete(LoginRequiredMixin, DeleteView):
 class AssignmentCreate(LoginRequiredMixin, CreateView):
     model = Assignment
     fields = ['name', 'description', 'grade', 'due_date']
-
+    def form_valid(self, form):
+        form.instance.classroom_id = self.kwargs.get('pk')
+        return super(AssignmentCreate, self).form_valid(form)
+        # return super(AssignmentCreate, self).form_valid(form)
+    
 
 class AssignmentUpdate(LoginRequiredMixin, UpdateView):
     model = Assignment

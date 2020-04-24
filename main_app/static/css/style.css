@@ -33,8 +33,6 @@ form{
   
 }
 
-
-
 div.column {
     border-radius: 10px;
 }
@@ -237,3 +235,14 @@ footer.page-footer {
 .brand-logo:hover {
     background: none !important;
 }
+
+#deletecontain.container {
+    display:flex;
+    position: absolute;
+    flex-flow: row;
+    flex: 3 100%;
+    
+
+}
+
+

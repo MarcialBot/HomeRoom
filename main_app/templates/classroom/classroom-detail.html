@@ -8,12 +8,25 @@
     <div class="card-content">
         <span class="card-title">{{ classroom.subject }}</span>
         <p>Description: {{ classroom.description }}</p>
-        
+        <table class="striped">
+            <thead>
+              <tr><th>Assignment</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              {% for assignment in classroom.assignment_set.all %}
+                <tr>
+                  <td>{{assignment.name}}</td>
+                  <td>{{assignment.get_description_display}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         <!-- still need list of students here  -->
     </div>
 <div class="card-action" style="border-radius: 0px 0px 10px 10px; background-color: #468AF6"">
     <a href="{% url 'classrooms_update' classroom.id %}" style="color: #fecc4d;">Edit</a>
     <a href="{% url 'classrooms_delete' classroom.id %}" style="color: #DA251D;">Delete</a>
+    <a href="{% url 'assignment_create' classroom.id %}">Create Assignment</a>
 </div>
    <!-- Available toys will come after this line -->
    <!-- </div> -->

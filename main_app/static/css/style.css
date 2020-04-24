@@ -78,11 +78,14 @@ label {
      margin: 0px 0px 20px 100px;
  }   
 
+
+
+/* 
  li {
      display: flex;
      flex-direction:column;
      padding: 0px 0px 0px 100px;
- }
+ } */
 
 /* login in */
 #id_username {
@@ -241,8 +244,19 @@ footer.page-footer {
     position: absolute;
     flex-flow: row;
     flex: 3 100%;
-    
-
 }
 
 
+ /* #signpgbtn {
+   display:flex;
+    position: absolute;
+    flex-flow: row;
+    flex: 3 100%;
+} */
+
+#classpgbtn {
+    display:flex;
+    position: absolute;
+    flex-flow: row;
+    flex: 3 100%;
+}

@@ -6,14 +6,16 @@
     Delete should delete class from class list
     Cancel should link back to class-list.html  -->
 
-<h1>Delete Class</h1>
+<div id="deletecontain" class= "container" style="border-radius: 10px; background-color: #fecc4db0; margin: 100px">
+<h3 style="writing-mode: vertical-rl; background-color: #4087F7; border-radius: 10px 0 0px 10px; margin: 0; color:#FECC4D; padding: 1rem;" >Delete?</h3>
 
-<h4>Are you sure you want to delete <span class="teal-text">{{ object.subject }}</span>?</h4>
+<h4 style="color:#808080; padding:30px; margin-block: 1em 2em;">Are you sure you want to delete <span class="blue-text">{{ object.subject }}</span>?</h4>
 
 <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="btn">
-    <a href="{% url 'classroom_detail' classroom.id %}">Cancel</a>
+    <input type="submit" value="Yes - Delete!" class="btn red" style="border-radius: 10px; color:rgb(230, 227, 222); margin:50px 0 0 0;">
+    <a href="{% url 'classroom_detail' classroom.id %}" style="font-size: 18px; margin:  0 10px 0 10px; color:#808080">Cancel</a>
 </form>
+</div>
 
 {% endblock %}

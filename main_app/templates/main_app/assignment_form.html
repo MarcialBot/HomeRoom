@@ -3,17 +3,30 @@
 {% block content %}
 
 <!-- Should only be seen is user is a Teacher -->
-
-<h1>Add Assignment</h1>
-
-<div class="card-action">
+<h3 style="color: #3096f3; margin: 10px 170px;">Add Assignment</h3>
+<div class="column" input="s2 col" style=" padding: 0 10px; border: 6px solid #3096f3; background-color: #86dcfc96;">
+  <div class="card-action">
     <form method="post">
       {% csrf_token %}
       <table>
           {{ form.as_table }}
       </table>
-      <button type="submit" class="btn">Add</button>
+      <button type="submit" class="btn blue" style="border-radius: 50px;border: none;
+      padding: 0 16px;
+      text-transform: uppercase;
+      vertical-align: middle;
+      margin: 10px 160px 10px">Add</button>
     </form>
   </div>
+</div>
 
+<script>
+  var dateEl = document.getElementById('id_due_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+</script>
 {% endblock %}

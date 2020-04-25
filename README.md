@@ -1,6 +1,11 @@
 # HomeRoom
 
 Heroku: [Homeroom Link](https://homeroom-teamtack.herokuapp.com/ "Homeroom Heroku App")
+Pitch Deck: [Pitch Deck File](https://docs.google.com/presentation/d/1vCLuQDobdzUi-pgQ3Ll7XlQeVSauXmBkEqCZutJIJAU/edit?ts=5e8d1689)
+Ticketing System: [Trello Page](https://trello.com/b/MdOi7fYf/group-project)
+ERD: [Data Models](https://www.lucidchart.com/invitations/accept/e4a5dc61-53b5-45bc-a81e-1e37f6d0c673)
+
+
 
 ## Mission
 

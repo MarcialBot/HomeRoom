@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>About the HomeRoom</h1>
-<hr />
+{% load static %}
 
+<h1 style="margin-left: 100px;">About HomeRoom</h1>
+<div>
+<img src="{% static 'images/classroom-clipart.png' %}"  style="border-radius: 10px; margin:13px 7px -4px 200px; border: 10px; border-style: outset;"width="40%" height="40%">
+</div>
+
+<hr />
+<div class="container" style="border-radius: 10px; background-color: #86dcfc96;">
+<p style="margin:10px;  font-size: 25px; font-family: 'Nanum Pen Script', cursive;">
+    Our mission is to make education accessible and empowering for students and teachers.
+We’ve made it our goal to provide an online classroom with a user friendly experience for students and teachers, enabling assignments to be distributed, managed and updated effectively and  efficiently. 
+The world is faced with a need for reliable and user-friendly educational software. Students aren’t able to sit face to face with teachers and teachers are forced implement lesson plans from afar. 
+</div>
+
+</p>
 {% endblock %}

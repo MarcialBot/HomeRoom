@@ -43,7 +43,7 @@ div.column {
     flex-direction: column; /* default */
     font-size: 12px;  
     padding: 0px;
-    background-image: url('/static/images/paperbg.png');
+    background-image: url('/static/images/paperbg1.png');
     background-size: 120%;
     background-position: center;
 }
@@ -53,7 +53,7 @@ div.column {
     flex-direction: column; /* default */
     font-size: 12px;  
     padding: 0px;
-    background-image: url('/static/images/paperbg.png');
+    background-image: url('/static/images/paperbg1.png');
     background-size: 120%;
     background-position: center;
 }
@@ -70,35 +70,31 @@ span.helptext{
 
 label {
     text-align: left;
-    padding: 0px 10px 0px 10px;
+    padding: 0px;
     display: flex;
+    color:gray;
+    background-color: #FECC4D;
+    border-radius: 10px;
+    margin: 10px 150px 5px 0px;
+    padding: 3px;
+    font-size: 14px;
 }
 
  p {
      margin: 0px 0px 20px 100px;
  }   
 
+
+
+/* 
  li {
      display: flex;
      flex-direction:column;
      padding: 0px 0px 0px 100px;
- }
+ } */
 
 /* login in */
-#id_username {
-  
-    padding: 0px 10px 0px 10px;
-    box-sizing: border-box;
-    background-color: white;
-    border: 5px solid;
-    border-color: #0093dd;
-    border-radius: 10px;
-    height: 3rem;
-    width: 70%;
-    font-size: 30px;
-    margin: 0 0 8px 0;
-    font-family: 'Nanum Pen Script', cursive;
-}
+
 
 #id_password {
     padding: 0px 10px 0px 10px;
@@ -145,6 +141,8 @@ label {
     margin: 0 0 8px 0;
 }
 
+
+
 #id_address {
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
@@ -175,6 +173,69 @@ label {
 }
 
 #id_subject {
+    padding: 0px 40px 0px 100px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 5px solid;
+    border-color: #0093dd;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 30px;
+    margin: 0 -40px 0px -80px;
+    font-family: 'Nanum Pen Script', cursive;
+   
+}
+
+#id_description {
+    padding: 0px 40px 0px 100px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 5px solid;
+    border-color: #0093dd;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 16px;
+    margin: 0 -40px 0px -80px;
+    font-family: 'Nanum Pen Script', cursive;
+    color: gray;
+}
+
+#id_username {
+  
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 5px solid;
+    border-color: #0093dd;
+    border-radius: 10px;
+    height: 3rem;
+    width: 70%;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+
+#id_name {
+  
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 5px solid;
+    border-color: #0093dd;
+    border-radius: 10px;
+    height: 3rem;
+    width: 70%;
+    font-size: 20px;
+    margin: 0 -40px 0px -80px;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+#id_grade {
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     background-color: white;
@@ -185,9 +246,24 @@ label {
     height: 3rem;
     width: 70%;
     font-size: 30px;
-    margin: 0 0 8px 10px;
+    margin: 0 -40px 0px -80px;
     font-family: 'Nanum Pen Script', cursive;
-   
+    color: gray;
+}
+#id_due_date {
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 5px solid;
+    border-color: #0093dd;
+    border-radius: 10px;
+    outline: darkblue;
+    height: 3rem;
+    width: 70%;
+    font-size: 16px;
+    margin: 0 -40px 0px -80px;
+    font-family: 'Nanum Pen Script', cursive;
+    color: gray;
 }
 
 /* dashboard */
@@ -209,13 +285,18 @@ div.card.content {
 
 /* ---------------- */
 div.select-wrapper{
-    padding:10px;
+    padding:0px;
+    background-color: white;
+    margin-right: 150px;
+    border-radius: 10px;
+    border-style:  solid;
+    border-color: #3096f3;
 }
 
 
 input.select-dropdown.dropdown-trigger{
     margin: 0;
-    padding: 10px;
+    padding: 0px;
     width: 30vh;
 }
 
@@ -241,8 +322,10 @@ footer.page-footer {
     position: absolute;
     flex-flow: row;
     flex: 3 100%;
-    
-
 }
 
+th {
+    margin: 10px;
+    padding:0px 5px;
 
+}

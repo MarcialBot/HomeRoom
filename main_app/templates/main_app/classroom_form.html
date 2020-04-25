@@ -4,8 +4,8 @@
 
 <!-- Should only be seen is user is Admin -->
 
-<h1 style="color: #3096f3; margin: 10px 270px;">Add Class</h1>
-<div class="column" input="s2 col" style=" padding: 0 10px; border: 6px solid #3096f3; background-color: aliceblue;">
+<h2 style="color: #3096f3; margin: 10px 230px;">Add Class</h2>
+<div class="column" input="s2 col" style=" padding: 0 10px; border: 6px solid #3096f3; background-color: #86dcfc96;">
 
 <form id="classform" action="" method="post">
     {% csrf_token %}
@@ -17,11 +17,12 @@
     text-transform: uppercase;
     vertical-align: middle;
     margin: 10px 160px 10px">
-    <a  id="cf_cancel_button" class="btn yellow" href="{% url 'classrooms_index' %}" style="border-radius: 50px;border: none;
+    <a  id="cf_cancel_button" class="btn" href="{% url 'classrooms_index' %}" style="border-radius: 50px;border: none;
     padding: 0 16px;
     text-transform: uppercase;
     vertical-align: middle;
-    margin: 10px 160px 10px">Cancel</a>
+    margin: 10px 160px 10px;
+    background-color:#fecc4d; ;">Cancel</a>
 </form>
 </div>
 

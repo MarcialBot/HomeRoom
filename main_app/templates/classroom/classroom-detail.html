@@ -16,7 +16,7 @@
               {% for assignment in classroom.assignment_set.all %}
                 <tr>
                   <td>{{assignment.name}}</td>
-                  <td>{{assignment.get_description_display}}</td>
+                  <td>{{assignment.description}}</td>
                 </tr>
               {% endfor %}
             </tbody>

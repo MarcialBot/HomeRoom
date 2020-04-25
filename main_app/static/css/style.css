@@ -117,7 +117,7 @@ label {
 
 /* sign up form */
 
-#id_password1 {
+#id_password1, #id_email, #id_first_name, #id_last_name {
     padding: 0px 10px 0px 10px;
     box-sizing: border-box;
     background-color: white;

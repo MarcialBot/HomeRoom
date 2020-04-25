@@ -1,1 +1,1 @@
-web: gunicorn Homeroom.wsgi
+web: gunicorn homeroom.wsgi

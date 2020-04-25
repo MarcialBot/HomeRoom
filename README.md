@@ -1,5 +1,17 @@
 # HomeRoom
 
+Team Members: 
+
+[Toni Horne](https://github.com/thegiftedgirl)
+
+[Arthur Ryoo](https://github.com/arthur-ryoo)
+
+[Coco Coleman](https://github.com/cococtrl)
+
+[Khris Marcial](https://github.com/KhrisMarcial)
+
+-----
+
 Heroku: [Homeroom Link](https://homeroom-teamtack.herokuapp.com/ "Homeroom Heroku App")
 
 Pitch Deck: [Pitch Deck File](https://docs.google.com/presentation/d/1vCLuQDobdzUi-pgQ3Ll7XlQeVSauXmBkEqCZutJIJAU/edit?ts=5e8d1689)

@@ -3,19 +3,27 @@
 
 
 
-{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
 <h3 class="title is-size4" style="color: #3096f3; margin: 10px 330px;">Sign Up</h3>
-<div class="column" input="s2 col" style="border-radius: 10px; padding: 0 10px 0 20px; border: 6px solid #3096f3; background-color: aliceblue;">
+<div class="column" input="s2 col"
+    style="border-radius: 10px; padding: 0 10px 0 20px; border: 6px solid #3096f3; background-color: aliceblue;">
     <form id="signinform" method="post" action="{% url 'signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {{ profile_form.as_p }}
-    <input type="submit" class="btn blue" value="signup" style="border-radius: 10px;border: none;
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+            {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+        {% endfor %}
+        {{ profile_form.as_p }}
+        <input type="submit" class="btn blue" value="signup" style="border-radius: 10px;border: none;
     padding: 0 16px;
     text-transform: uppercase;
     vertical-align: middle;
     margin: 0px 160px 10px 110px">
-</form>
+    </form>
 </div>
 <script>
     let selectElement = document.getElementById('id_user_type');

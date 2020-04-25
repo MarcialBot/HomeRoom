@@ -7,13 +7,22 @@
 <h1>Add Assignment</h1>
 
 <div class="card-action">
-    <form method="post">
-      {% csrf_token %}
-      <table>
-          {{ form.as_table }}
-      </table>
-      <button type="submit" class="btn">Add</button>
-    </form>
-  </div>
+  <form method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit" class="btn">Add</button>
+  </form>
+</div>
 
+<script>
+  var dateEl = document.getElementById('id_due_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+</script>
 {% endblock %}

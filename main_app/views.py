@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.http import HttpResponseRedirect
 
 from .models import Classroom, Assignment
-from .forms import ProfileForm
+from .forms import ProfileForm, ExtendedUserForm
 
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -16,6 +16,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 
 logger = logging.getLogger(__name__)
+
 
 def home(request):
     return render(request, 'home.html')
@@ -41,9 +42,8 @@ def classrooms_detail(request, classroom_id):
 
 
 def signup(request):
-    error_message = ''
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = ExtendedUserForm(request.POST)
         profile_form = ProfileForm(request.POST)
         if form.is_valid() and profile_form.is_valid():
             user = form.save()
@@ -53,11 +53,10 @@ def signup(request):
             login(request, user)
             return redirect('home')
         else:
-            error_message = 'Invalid sign up - try again'
-    form = UserCreationForm()
+            return render(request, 'registration/signup.html', {'form': form, 'profile_form': profile_form})
+    form = ExtendedUserForm()
     profile_form = ProfileForm()
-    context = {'form': form, 'profile_form': profile_form,
-               'error_message': error_message}
+    context = {'form': form, 'profile_form': profile_form}
     return render(request, 'registration/signup.html', context)
 
 
@@ -84,11 +83,11 @@ class ClassroomDelete(LoginRequiredMixin, DeleteView):
 class AssignmentCreate(LoginRequiredMixin, CreateView):
     model = Assignment
     fields = ['name', 'description', 'grade', 'due_date']
+
     def form_valid(self, form):
         form.instance.classroom_id = self.kwargs.get('pk')
         return super(AssignmentCreate, self).form_valid(form)
-        # return super(AssignmentCreate, self).form_valid(form)
-    
+
 
 class AssignmentUpdate(LoginRequiredMixin, UpdateView):
     model = Assignment

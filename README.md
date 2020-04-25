@@ -1,6 +1,6 @@
 # HomeRoom
 
-Team Members: 
+**Team Members:** 
 
 [Toni Horne](https://github.com/thegiftedgirl)
 
